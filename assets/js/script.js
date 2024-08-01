@@ -157,3 +157,9 @@ for (let i = 0; i < navigationLinks.length; i++) {
 
   });
 }
+
+function displayRandomImage() {
+  var index = Math.floor(Math.random() * 11);
+  var imageName = ['./assets/images/avatar/', index, '.png'].join('');
+  document.getElementById('randomImage').src = imageName;
+}
