@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 
 <head>
   <meta charset="UTF-8">
@@ -23,6 +23,12 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <script>
+    (function () {
+      var theme = localStorage.getItem("theme") || "light";
+      document.documentElement.setAttribute("data-theme", theme);
+    })();
+  </script>
 </head>
 
 <body>
@@ -74,7 +80,7 @@
             <div class="contact-info">
               <p class="contact-title">Email</p>
 
-              <a href="mailto:poppyxu@zju.edu.com" class="contact-link">poppyxu@zju.edu.com</a>
+              <a href="mailto:karmaoh@foxmail.com" class="contact-link">karmaoh@foxmail.com</a>
             </div>
 
           </li>
@@ -168,11 +174,18 @@
           </li>
 
           <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Resume</button>
+            <button class="navbar-link" data-nav-link>Portfolio</button>
           </li>
 
+          <!-- <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>Resume</button>
+          </li> -->
+
           <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Portfolio</button>
+            <button class="theme-toggle" data-theme-toggle type="button" aria-label="Switch to dark mode">
+              <ion-icon name="moon-outline" data-theme-icon="to-dark"></ion-icon>
+              <ion-icon name="sunny-outline" data-theme-icon="to-light"></ion-icon>
+            </button>
           </li>
 
           <!-- <li class="navbar-item">
@@ -203,16 +216,49 @@
 
         <section class="about-text">
           <p>
-            I'm Poppy Xu, currently working as an Algorithm Engineer at modelbest.cn, focusing on Omni Streaming-based Multimodal Large Language Model (MLLM).
+            I'm Poppy(Yingjing) Xu, currently an AI Researcher at <a href="https://modelbest.cn/" target="_blank" rel="noopener noreferrer">ModelBest</a>（面壁智能）, where my work focuses on post training of Omni Streaming-based Multimodal Large Language Model (MLLM).
           </p>
 
           <p>
-            I received my Master's degree in Software Engineering from Zhejiang University. During my studies, I was affiliated with the ACES-HiG laboratory, where I conducted research on human-centered medical AI, particularly in computer vision applications for medical scenarios, under the guidance of Dr. Bo Lin and Prof. Jianwei Yin.
+            I received my Master's degree in Software Engineering from Zhejiang University, co-advised by Dr. Bo Lin and Prof. Jianwei Yin at the ACES-HiG Lab.
           </p>
 
           <p>
-            Prior to my current role, I worked as an AIGC Algorithm Intern at 01.AI, where I specialized in instruction-based image editing tasks.
+            I'm fascinated by where AI is heading across tech, startups, and product design!
           </p>
+
+        </section>
+
+
+        <!--
+          - news
+        -->
+
+        <section class="news">
+
+          <h3 class="h3 news-title">News</h3>
+
+          <ol class="news-list">
+            <li class="news-item">
+              <span class="news-date">Feb, 2026</span>
+              <p class="news-text">Our omni foundation model, MiniCPM-o-4.5 released, the world’s first omnimodal full-duplex model.</p>
+            </li>
+
+            <li class="news-item">
+              <span class="news-date">Jan, 2025</span>
+              <p class="news-text">Joined <a href="https://modelbest.cn/" target="_blank" rel="noopener noreferrer">ModelBest</a>（面壁智能）, building MiniCPM V and o series as a team member, focusing on post training of multi-modal large language models.</p>
+            </li>
+
+            <li class="news-item">
+              <span class="news-date">June, 2024</span>
+              <p class="news-text">Joined <a href="https://www.lingyiwanwu.com/" target="_blank" rel="noopener noreferrer">01.AI</a> (零一万物), working on instruction-based image editing.</p>
+            </li>
+
+            <li class="news-item">
+              <span class="news-date">June, 2022</span>
+              <p class="news-text">Joined Binjiang Institute of Zhejiang University, focusing on human-centered medical AI and computer vision.</p>
+            </li>
+          </ol>
 
         </section>
 
@@ -525,10 +571,313 @@
 
 
       <!--
+        - #PORTFOLIO
+      -->
+
+      <article class="portfolio" data-page="portfolio">
+
+        <header>
+          <h2 class="h2 article-title">Portfolio</h2>
+        </header>
+
+        <section class="papers">
+
+          <h3 class="h3 papers-title">Publications</h3>
+
+          <ul class="paper-list">
+            <li class="paper-item">
+              <div class="paper-card">
+                <figure class="paper-thumb paper-thumb--figure">
+                  <img src="./assets/images/o45.png" alt="MiniCPM-o 4.5" loading="eager">
+                </figure>
+                <div class="paper-body">
+                  <h3 class="paper-title">MiniCPM-o 4.5: Towards Real-Time Full-Duplex Omni-Modal Interaction</h3>
+                  <p class="paper-authors">Junbo Cui, Bokai Xu, Chongyi Wang, Tianyu Yu, Weiyue Sun, <span class="paper-me">Yingjing Xu</span>, Tianran Wang, et al.</p>
+                  <p class="paper-meta">arXiv, 2026</p>
+                  <p class="paper-links">
+                    <a class="paper-link" href="https://arxiv.org/abs/2604.27393" target="_blank" rel="noopener noreferrer">Paper</a>
+                    <a class="paper-link" href="https://minicpmo45.modelbest.cn/" target="_blank" rel="noopener noreferrer">Project</a>
+                  </p>
+                </div>
+              </div>
+            </li>
+
+            <li class="paper-item">
+              <div class="paper-card">
+                <figure class="paper-thumb paper-thumb--figure">
+                  <img src="./assets/images/v45.png" alt="MiniCPM-V 4.5" loading="eager">
+                </figure>
+                <div class="paper-body">
+                  <h3 class="paper-title">MiniCPM-V 4.5: Cooking Efficient MLLMs via Architecture, Data, and Training Recipe</h3>
+                  <p class="paper-authors">Tianyu Yu, Zefan Wang, Chongyi Wang, ..., <span class="paper-me">Yingjing Xu</span>, ..., Yuan Yao, Zhiyuan Liu, Maosong Sun</p>
+                  <p class="paper-meta">CVPR, 2026</p>
+                  <p class="paper-links">
+                    <a class="paper-link" href="https://arxiv.org/abs/2509.18154" target="_blank" rel="noopener noreferrer">Paper</a>
+                    <a class="paper-link" href="https://github.com/OpenBMB/MiniCPM-V" target="_blank" rel="noopener noreferrer">Project</a>
+                  </p>
+                </div>
+              </div>
+            </li>
+
+            <li class="paper-item">
+              <a class="paper-card" href="https://arxiv.org/abs/2605.17360" target="_blank" rel="noopener noreferrer">
+                <figure class="paper-thumb paper-thumb--figure">
+                  <img src="./assets/images/odb.png" alt="Omni-DuplexEval" loading="lazy">
+                </figure>
+                <div class="paper-body">
+                  <h3 class="paper-title">Omni-DuplexEval: Evaluating Real-time Duplex Omni-modal Interaction</h3>
+                  <p class="paper-authors">Chaoqun He*, Mingyang Xiang*, <span class="paper-me">Yingjing Xu</span>, Bokai Xu, Junbo Cui, Jie Zhou, Yuan Yao, Lijie Wen</p>
+                  <p class="paper-meta">arXiv, 2026</p>
+                </div>
+              </a>
+            </li>
+
+            <li class="paper-item">
+              <div class="paper-card">
+                <figure class="paper-thumb paper-thumb--figure">
+                  <img src="./assets/images/lws.png" alt="Liberating LLM Capabilities" loading="lazy">
+                </figure>
+                <div class="paper-body">
+                  <h3 class="paper-title">Liberating LLM Capabilities in Full-Duplex Speech Models</h3>
+                  <p class="paper-authors">Luoyuan Zhang, Bokai Xu, Junbo Cui, Weiyue Sun, <span class="paper-me">Yingjing Xu</span>, Hanyu Liu, Yuan Yao</p>
+                  <p class="paper-meta">COLM, 2026</p>
+                  <p class="paper-links">
+                    <a class="paper-link" href="https://arxiv.org/abs/2606.07547" target="_blank" rel="noopener noreferrer">Paper</a>
+                    <a class="paper-link" href="https://royalzhang.com/project/lws-page/" target="_blank" rel="noopener noreferrer">Project</a>
+                  </p>
+                </div>
+              </div>
+            </li>
+
+            <li class="paper-item">
+              <a class="paper-card" href="https://arxiv.org/abs/2411.17323" target="_blank" rel="noopener noreferrer">
+                <figure class="paper-thumb">
+                  <img src="./assets/images/insightedit.png" alt="InsightEdit" loading="eager">
+                </figure>
+                <div class="paper-body">
+                  <h3 class="paper-title">InsightEdit: Towards Better Instruction Following for Image Editing</h3>
+                  <p class="paper-authors"><span class="paper-me">Yingjing Xu*</span>, Jie Kong*, Jiazhi Wang, Xiao Pan, Bo Lin, and Qiang Liu</p>
+                  <p class="paper-meta">CVPR, 2025</p>
+                </div>
+              </a>
+            </li>
+
+            <li class="paper-item">
+              <a class="paper-card" href="https://doi.org/10.1145/3708359.3712098" target="_blank" rel="noopener noreferrer">
+                <figure class="paper-thumb">
+                  <img src="./assets/images/project_3.png" alt="SkinGEN" loading="eager">
+                </figure>
+                <div class="paper-body">
+                  <h3 class="paper-title">SkinGEN: An Explainable Dermatology Diagnosis-to-generation Framework with Interactive Vision-Language Models</h3>
+                  <p class="paper-authors">Bo Lin*, <span class="paper-me">Yingjing Xu*</span>, Xuanwen Bao, Zhou Zhao, Zhouyang Wang, Jianwei Yin</p>
+                  <p class="paper-meta">IUI, 2025</p>
+                </div>
+              </a>
+            </li>
+
+            <li class="paper-item">
+              <a class="paper-card" href="https://arxiv.org/abs/2509.12777" target="_blank" rel="noopener noreferrer">
+                <figure class="paper-thumb paper-thumb--figure">
+                  <img src="./assets/images/cect-mamba.png" alt="CECT-Mamba" loading="lazy">
+                </figure>
+                <div class="paper-body">
+                  <h3 class="paper-title">CECT-Mamba: a Hierarchical Contrast-enhanced-aware Model for Pancreatic Tumor Subtyping from Multi-phase CECT</h3>
+                  <p class="paper-authors">Zhifang Gong, Shuo Gao, Ben Zhao, <span class="paper-me">Yingjing Xu</span>, Yijun Yang, Shenghong Ju, Guangquan Zhou</p>
+                  <p class="paper-meta">ICCV Workshops, 2025</p>
+                </div>
+              </a>
+            </li>
+
+            <li class="paper-item">
+              <a class="paper-card" href="https://doi.org/10.1145/3706599.3719706" target="_blank" rel="noopener noreferrer">
+                <figure class="paper-thumb">
+                  <img src="./assets/images/project_2.jpg" alt="Break the Mask Barrier" loading="lazy">
+                </figure>
+                <div class="paper-body">
+                  <h3 class="paper-title">"Break the Mask Barrier": An AU-based Rehabilitation Training System for Parkinson's Hypomimia</h3>
+                  <p class="paper-authors">Xueyan Cai*, <span class="paper-me">Yingjing Xu*</span>, Zihong Zhou, Mengru Xue, Zhengke Li, Chentian Weng, Wei Luo, Cheng Yao, Bo Lin, Jianwei Yin</p>
+                  <p class="paper-meta">CHI EA, 2025</p>
+                </div>
+              </a>
+            </li>
+
+            <li class="paper-item">
+              <a class="paper-card" href="https://arxiv.org/abs/2410.09772" target="_blank" rel="noopener noreferrer">
+                <figure class="paper-thumb">
+                  <img src="./assets/images/project_1.jpg" alt="HypomimiaCoach" loading="lazy">
+                </figure>
+                <div class="paper-body">
+                  <h3 class="paper-title">HypomimiaCoach: An AU-based Digital Therapy System for Hypomimia Detection &amp; Rehabilitation with Parkinson's Disease</h3>
+                  <p class="paper-authors"><span class="paper-me">Yingjing Xu*</span>, Xueyan Cai*, Zihong Zhou, Mengru Xue, Bo Wang, Haotian Wang, Zhengke Li, Chentian Weng, Wei Luo, Cheng Yao, Bo Lin, Jianwei Yin</p>
+                  <p class="paper-meta">arXiv, 2024</p>
+                </div>
+              </a>
+            </li>
+
+            <li class="paper-item">
+              <a class="paper-card" href="https://2023.midl.io/papers/s101" target="_blank" rel="noopener noreferrer">
+                <figure class="paper-thumb paper-thumb--figure">
+                  <img src="./assets/images/au-gnn.png" alt="Facial AU-aid hypomimia diagnosis" loading="lazy">
+                </figure>
+                <div class="paper-body">
+                  <h3 class="paper-title">Facial AU-aid hypomimia diagnosis based on GNN</h3>
+                  <p class="paper-authors"><span class="paper-me">Yingjing Xu</span>, Bo Lin, Wei Luo, Shuiguang Deng, and Jianwei Yin</p>
+                  <p class="paper-meta">MIDL, 2023</p>
+                </div>
+              </a>
+            </li>
+          </ul>
+
+        </section>
+
+
+        <section class="projects">
+
+          <h3 class="h3 papers-title">Projects</h3>
+
+          <ul class="project-list">
+            <li class="project-item  active" data-filter-item data-category="web design">
+              <a href="#">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/project_4.png" alt="FaceTicket" loading="eager">
+                </figure>
+
+                <h3 class="project-title">FaceTicket</h3>
+
+                <p class="project-category">AIGC from 42Lab</p>
+
+              </a>
+            </li>
+
+            <!-- <li class="project-item  active" data-filter-item data-category="applications">
+              <a href="#">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/project-4.png" alt="brawlhalla" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Brawlhalla</h3>
+
+                <p class="project-category">Applications</p>
+
+              </a>
+            </li> -->
+
+            <!-- <li class="project-item  active" data-filter-item data-category="web design">
+              <a href="#">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/project-5.png" alt="dsm." loading="lazy">
+                </figure>
+
+                <h3 class="project-title">DSM.</h3>
+
+                <p class="project-category">Web design</p>
+
+              </a>
+            </li>
+
+            <li class="project-item  active" data-filter-item data-category="web design">
+              <a href="#">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/project-6.png" alt="metaspark" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">MetaSpark</h3>
+
+                <p class="project-category">Web design</p>
+
+              </a>
+            </li>
+
+            <li class="project-item  active" data-filter-item data-category="web development">
+              <a href="#">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/project-7.png" alt="summary" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Summary</h3>
+
+                <p class="project-category">Web development</p>
+
+              </a>
+            </li>
+
+            <li class="project-item  active" data-filter-item data-category="applications">
+              <a href="#">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/project-8.jpg" alt="task manager" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Task Manager</h3>
+
+                <p class="project-category">Applications</p>
+
+              </a>
+            </li>
+
+            <li class="project-item  active" data-filter-item data-category="web development">
+              <a href="#">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/project-9.png" alt="arrival" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Arrival</h3>
+
+                <p class="project-category">Web development</p>
+
+              </a>
+            </li> -->
+
+          </ul>
+
+        </section>
+
+      </article>
+
+
+
+
+
+      <!--
         - #RESUME
       -->
 
-      <article class="resume" data-page="resume">
+      <!-- Resume 暂时隐藏，需要时去掉 hidden 并恢复导航 -->
+      <article class="resume" data-page="resume" hidden>
 
         <header>
           <h2 class="h2 article-title">Resume</h2>
@@ -549,7 +898,7 @@
           <ol class="timeline-list">
             <li class="timeline-item">
 
-              <h4 class="h4 timeline-item-title">MLLM Algorithm Engineer at ModelBest</h4>
+              <h4 class="h4 timeline-item-title">AI Researcher at <a href="https://modelbest.cn/" target="_blank" rel="noopener noreferrer">ModelBest</a>（面壁智能）</h4>
 
               <span>2025.1 — present</span>
 
@@ -667,7 +1016,7 @@
         </section>
 
 
-        <section class="timeline">
+        <section class="timeline" hidden>
 
           <div class="title-wrapper">
             <div class="icon-box">
@@ -817,264 +1166,6 @@
           </ul>
 
         </section> -->
-
-      </article>
-
-
-
-
-
-      <!--
-        - #PORTFOLIO
-      -->
-
-      <article class="portfolio" data-page="portfolio">
-
-        <header>
-          <h2 class="h2 article-title">Portfolio</h2>
-        </header>
-
-        <section class="projects">
-
-          <ul class="filter-list">
-
-            <li class="filter-item">
-              <button class="active" data-filter-btn>All</button>
-            </li>
-
-            <!-- <li class="filter-item">
-              <button data-filter-btn>Web design</button>
-            </li>
-
-            <li class="filter-item">
-              <button data-filter-btn>Applications</button>
-            </li>
-
-            <li class="filter-item">
-              <button data-filter-btn>Web development</button>
-            </li> -->
-
-          </ul>
-
-          <div class="filter-select-box">
-
-            <button class="filter-select" data-select>
-
-              <div class="select-value" data-selecct-value>Select category</div>
-
-              <div class="select-icon">
-                <ion-icon name="chevron-down"></ion-icon>
-              </div>
-
-            </button>
-
-            <ul class="select-list">
-
-              <li class="select-item">
-                <button data-select-item>All</button>
-              </li>
-<!-- 
-              <li class="select-item">
-                <button data-select-item>Web design</button>
-              </li>
-
-              <li class="select-item">
-                <button data-select-item>Applications</button>
-              </li>
-
-              <li class="select-item">
-                <button data-select-item>Web development</button>
-              </li> -->
-
-            </ul>
-
-          </div>
-
-          <ul class="project-list">
-            <li class="project-item  active" data-filter-item data-category="web development">
-              <a href="https://arxiv.org/abs/2411.17323">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/insightedit.png" alt="InsightEdit" loading="eager">
-                </figure>
-
-                <h3 class="project-title">InsightEdit</h3>
-
-                <p class="project-category">Image Editing</p>
-
-              </a>
-            </li>
-
-
-            <li class="project-item  active" data-filter-item data-category="web development">
-              <a href="https://arxiv.org/abs/2410.09772">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project_1.jpg" alt="hypomimiacoach" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">HypomimiaCoach</h3>
-
-                <p class="project-category">Human-Centered Medical AI</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="web development">
-              <a href="https://arxiv.org/abs/2404.14755">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project_3.png" alt="orizon" loading="eager">
-                </figure>
-
-                <h3 class="project-title">SkinGEN</h3>
-
-                <p class="project-category">Human-Centered Medical AI</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="web design">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project_4.png" alt="fundo" loading="eager">
-                </figure>
-
-                <h3 class="project-title">FaceTicket</h3>
-
-                <p class="project-category">AIGC from 42Lab</p>
-
-              </a>
-            </li>
-
-            <!-- <li class="project-item  active" data-filter-item data-category="applications">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-4.png" alt="brawlhalla" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Brawlhalla</h3>
-
-                <p class="project-category">Applications</p>
-
-              </a>
-            </li> -->
-
-            <!-- <li class="project-item  active" data-filter-item data-category="web design">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-5.png" alt="dsm." loading="lazy">
-                </figure>
-
-                <h3 class="project-title">DSM.</h3>
-
-                <p class="project-category">Web design</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="web design">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-6.png" alt="metaspark" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">MetaSpark</h3>
-
-                <p class="project-category">Web design</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="web development">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-7.png" alt="summary" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Summary</h3>
-
-                <p class="project-category">Web development</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="applications">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-8.jpg" alt="task manager" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Task Manager</h3>
-
-                <p class="project-category">Applications</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="web development">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-9.png" alt="arrival" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Arrival</h3>
-
-                <p class="project-category">Web development</p>
-
-              </a>
-            </li> -->
-
-          </ul>
-
-        </section>
 
       </article>
 

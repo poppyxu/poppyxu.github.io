@@ -61,7 +61,9 @@ const selectItems = document.querySelectorAll("[data-select-item]");
 const selectValue = document.querySelector("[data-selecct-value]");
 const filterBtn = document.querySelectorAll("[data-filter-btn]");
 
-select.addEventListener("click", function () { elementToggleFunc(this); });
+if (select) {
+  select.addEventListener("click", function () { elementToggleFunc(this); });
+}
 
 // add event in all select items
 for (let i = 0; i < selectItems.length; i++) {
@@ -143,18 +145,22 @@ const pages = document.querySelectorAll("[data-page]");
 // add event to all nav link
 for (let i = 0; i < navigationLinks.length; i++) {
   navigationLinks[i].addEventListener("click", function () {
+    const targetPage = this.textContent.trim().toLowerCase();
 
-    for (let i = 0; i < pages.length; i++) {
-      if (this.innerHTML.toLowerCase() === pages[i].dataset.page) {
-        pages[i].classList.add("active");
-        navigationLinks[i].classList.add("active");
+    for (let j = 0; j < pages.length; j++) {
+      if (pages[j].dataset.page === targetPage) {
+        pages[j].classList.add("active");
         window.scrollTo(0, 0);
       } else {
-        pages[i].classList.remove("active");
-        navigationLinks[i].classList.remove("active");
+        pages[j].classList.remove("active");
       }
     }
 
+    for (let j = 0; j < navigationLinks.length; j++) {
+      navigationLinks[j].classList.remove("active");
+    }
+
+    this.classList.add("active");
   });
 }
 
@@ -162,4 +168,34 @@ function displayRandomImage() {
   var index = Math.floor(Math.random() * 11);
   var imageName = ['./assets/images/avatar/', index, '.png'].join('');
   document.getElementById('randomImage').src = imageName;
+}
+
+
+
+// theme toggle
+const themeToggleBtn = document.querySelector("[data-theme-toggle]");
+
+const applyTheme = function (theme) {
+  document.documentElement.setAttribute("data-theme", theme);
+  localStorage.setItem("theme", theme);
+
+  if (themeToggleBtn) {
+    themeToggleBtn.setAttribute(
+      "aria-label",
+      theme === "light" ? "Switch to dark mode" : "Switch to light mode"
+    );
+  }
+};
+
+if (themeToggleBtn && !themeToggleBtn.dataset.bound) {
+  themeToggleBtn.dataset.bound = "true";
+
+  applyTheme(document.documentElement.getAttribute("data-theme") || "light");
+
+  themeToggleBtn.addEventListener("click", function () {
+    const nextTheme = document.documentElement.getAttribute("data-theme") === "light"
+      ? "dark"
+      : "light";
+    applyTheme(nextTheme);
+  });
 }
