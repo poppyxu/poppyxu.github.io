@@ -1298,7 +1298,8 @@ main {
 
 .paper-card:hover .paper-title { color: var(--orange-yellow-crayola); }
 
-.paper-authors {
+.paper-authors,
+.paper-contrib {
   color: var(--light-gray);
   font-size: var(--fs-7);
   font-weight: var(--fw-300);
