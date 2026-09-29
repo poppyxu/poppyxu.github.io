@@ -627,10 +627,18 @@ main {
 
 .about-text p { margin-bottom: 15px; }
 
-.about-interests-title {
-  margin: 4px 0 12px;
+.about-interests-title,
+.about-contact {
   color: var(--orange-yellow-crayola);
   font-weight: var(--fw-500);
+}
+
+.about-interests-title {
+  margin: 4px 0 12px;
+}
+
+.about-contact {
+  margin-top: 1.7em;
 }
 
 .about-interests {
