@@ -627,6 +627,50 @@ main {
 
 .about-text p { margin-bottom: 15px; }
 
+.about-interests-title {
+  margin: 4px 0 12px;
+  color: var(--orange-yellow-crayola);
+  font-weight: var(--fw-500);
+}
+
+.about-interests {
+  display: grid;
+  gap: 16px;
+  margin: 0 0 6px;
+  padding: 0;
+  counter-reset: interest;
+}
+
+.about-interests li {
+  list-style: none;
+  position: relative;
+  padding-left: 1.6em;
+  line-height: 1.65;
+}
+
+.about-interests li::before {
+  counter-increment: interest;
+  content: counter(interest) ".";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--orange-yellow-crayola);
+  font-weight: var(--fw-500);
+}
+
+.interest-label {
+  display: inline;
+  margin-right: 0.35em;
+  color: var(--orange-yellow-crayola);
+  font-weight: var(--fw-500);
+}
+
+.interest-text {
+  display: inline;
+  color: var(--light-gray);
+  font-weight: var(--fw-300);
+}
+
 .about-text a,
 .timeline-item-title a {
   display: inline;
